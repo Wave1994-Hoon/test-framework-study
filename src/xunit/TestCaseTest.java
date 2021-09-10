@@ -5,11 +5,10 @@ public class TestCaseTest extends TestCase{
         super(name);
     }
 
-    public void testRunning() {
+    public void testTemplateMethod() {
         WasRun wasRun = new WasRun("testMethod");
-        Assert.assertEquals(false, wasRun.wasRun);
         wasRun.run();
-        Assert.assertEquals(true, wasRun.wasRun);
+        Assert.assertEquals("setUp testMethod tearDown", wasRun.log);
 
     }
 

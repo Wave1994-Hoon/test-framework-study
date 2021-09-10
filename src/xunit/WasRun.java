@@ -2,14 +2,23 @@ package xunit;
 
 
 public class WasRun extends TestCase {
-    public boolean wasRun;
+    public String log;
+
+    @Override
+    public void setUp() {
+        log = "setUp";
+    }
 
     public WasRun(String name) {
         super(name);
     }
 
     public void testMethod() {
-        wasRun = true;
+        log += " testMethod";
     }
 
+    @Override
+    public void tearDown() {
+        log += " tearDown";
+    }
 }
